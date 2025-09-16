@@ -1,0 +1,48 @@
+{
+  "name": "templately-playwright-tests",
+  "version": "1.0.0",
+  "description": "Comprehensive Playwright MCP test suite for Templately FSI and AI FSI workflows",
+  "main": "playwright.config.js",
+  "scripts": {
+    "test": "playwright test",
+    "test:setup": "playwright test setup.test.js",
+    "test:fsi": "playwright test fsi-workflow.test.js",
+    "test:ai-fsi": "playwright test ai-fsi-workflow.test.js",
+    "test:teardown": "playwright test teardown.test.js",
+    "test:headed": "playwright test --headed",
+    "test:ui": "playwright test --ui",
+    "test:debug": "playwright test --debug",
+    "test:chrome": "playwright test --project=fsi-chrome",
+    "test:firefox": "playwright test --project=fsi-firefox",
+    "report": "playwright show-report",
+    "install:browsers": "playwright install",
+    "install:deps": "playwright install-deps"
+  },
+  "keywords": [
+    "templately",
+    "wordpress",
+    "playwright",
+    "testing",
+    "fsi",
+    "ai",
+    "mcp",
+    "automation"
+  ],
+  "author": "Templately Team",
+  "license": "MIT",
+  "devDependencies": {
+    "@playwright/test": "^1.40.0"
+  },
+  "engines": {
+    "node": ">=16.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/templately/templately.git",
+    "directory": "tests"
+  },
+  "bugs": {
+    "url": "https://github.com/templately/templately/issues"
+  },
+  "homepage": "https://templately.com"
+}

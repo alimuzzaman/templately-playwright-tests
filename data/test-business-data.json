@@ -1,0 +1,150 @@
+{
+  "businessScenarios": [
+    {
+      "id": "tech-company",
+      "name": "Technology Company",
+      "category": "technology",
+      "data": {
+        "businessName": "TechSolutions Pro",
+        "industry": "Technology",
+        "description": "We are a leading technology consulting company specializing in digital transformation, cloud solutions, and innovative software development. Our expert team helps businesses modernize their operations and achieve sustainable growth through cutting-edge technology solutions.",
+        "email": "contact@techsolutionspro.com",
+        "phone": "+1-555-123-4567",
+        "address": "456 Tech Plaza, Suite 789, Innovation District, San Francisco, CA 94105, United States",
+        "hours": "Monday to Friday: 9:00 AM to 6:00 PM (PST), Saturday: 10:00 AM to 2:00 PM (PST), Sunday: Closed",
+        "replaceImages": false
+      },
+      "expectedContent": [
+        "digital transformation",
+        "technology solutions",
+        "cloud solutions",
+        "software development"
+      ]
+    },
+    {
+      "id": "restaurant",
+      "name": "Restaurant Business",
+      "category": "restaurant",
+      "data": {
+        "businessName": "Bella Vista Restaurant",
+        "industry": "Restaurant",
+        "description": "Bella Vista Restaurant offers an authentic Italian dining experience with fresh, locally-sourced ingredients and traditional recipes passed down through generations. Our warm atmosphere and exceptional service make every meal memorable.",
+        "email": "info@bellavista.com",
+        "phone": "+1-555-987-6543",
+        "address": "123 Main Street, Downtown District, New York, NY 10001, United States",
+        "hours": "Tuesday to Sunday: 5:00 PM to 10:00 PM, Monday: Closed",
+        "replaceImages": true
+      },
+      "expectedContent": [
+        "italian dining",
+        "authentic",
+        "locally-sourced",
+        "traditional recipes"
+      ]
+    },
+    {
+      "id": "healthcare",
+      "name": "Healthcare Practice",
+      "category": "medical",
+      "data": {
+        "businessName": "Wellness Medical Center",
+        "industry": "Healthcare",
+        "description": "Wellness Medical Center provides comprehensive healthcare services with a focus on preventive care and patient wellness. Our experienced medical team offers personalized treatment plans and state-of-the-art medical technology.",
+        "email": "appointments@wellnessmedical.com",
+        "phone": "+1-555-456-7890",
+        "address": "789 Health Drive, Medical District, Chicago, IL 60601, United States",
+        "hours": "Monday to Friday: 8:00 AM to 6:00 PM, Saturday: 9:00 AM to 2:00 PM, Sunday: Emergency only",
+        "replaceImages": false
+      },
+      "expectedContent": [
+        "healthcare services",
+        "preventive care",
+        "medical team",
+        "treatment plans"
+      ]
+    },
+    {
+      "id": "ecommerce",
+      "name": "E-commerce Store",
+      "category": "ecommerce",
+      "data": {
+        "businessName": "StyleHub Fashion",
+        "industry": "E-commerce",
+        "description": "StyleHub Fashion is your premier destination for trendy and affordable fashion. We curate the latest styles from around the world and offer fast shipping with excellent customer service.",
+        "email": "support@stylehubfashion.com",
+        "phone": "+1-555-321-9876",
+        "address": "321 Fashion Avenue, Style District, Los Angeles, CA 90210, United States",
+        "hours": "Online 24/7, Customer Service: Monday to Friday: 9:00 AM to 7:00 PM (PST)",
+        "replaceImages": true
+      },
+      "expectedContent": [
+        "fashion",
+        "trendy",
+        "affordable",
+        "fast shipping"
+      ]
+    },
+    {
+      "id": "consulting",
+      "name": "Business Consulting",
+      "category": "business",
+      "data": {
+        "businessName": "Strategic Business Advisors",
+        "industry": "Consulting",
+        "description": "Strategic Business Advisors helps companies optimize their operations, increase profitability, and achieve sustainable growth. Our experienced consultants provide tailored solutions for businesses of all sizes.",
+        "email": "contact@strategicbusinessadvisors.com",
+        "phone": "+1-555-654-3210",
+        "address": "987 Business Center, Corporate District, Boston, MA 02101, United States",
+        "hours": "Monday to Friday: 8:00 AM to 6:00 PM (EST), Weekends by appointment",
+        "replaceImages": false
+      },
+      "expectedContent": [
+        "business optimization",
+        "profitability",
+        "sustainable growth",
+        "tailored solutions"
+      ]
+    }
+  ],
+  "templateCategories": [
+    {
+      "id": "business",
+      "name": "Business",
+      "expectedTemplates": 15,
+      "commonFeatures": ["contact forms", "about section", "services", "testimonials"]
+    },
+    {
+      "id": "portfolio",
+      "name": "Portfolio",
+      "expectedTemplates": 10,
+      "commonFeatures": ["gallery", "projects", "skills", "contact"]
+    },
+    {
+      "id": "ecommerce",
+      "name": "E-commerce",
+      "expectedTemplates": 8,
+      "commonFeatures": ["product catalog", "shopping cart", "checkout", "payment"]
+    },
+    {
+      "id": "restaurant",
+      "name": "Restaurant",
+      "expectedTemplates": 6,
+      "commonFeatures": ["menu", "reservations", "location", "gallery"]
+    },
+    {
+      "id": "medical",
+      "name": "Medical",
+      "expectedTemplates": 5,
+      "commonFeatures": ["services", "appointments", "team", "contact"]
+    }
+  ],
+  "testConfiguration": {
+    "defaultTimeout": 30000,
+    "longTimeout": 300000,
+    "aiTimeout": 600000,
+    "retryAttempts": 2,
+    "screenshotOnFailure": true,
+    "videoOnFailure": true,
+    "traceOnFailure": true
+  }
+}
