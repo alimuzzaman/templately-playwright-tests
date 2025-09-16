@@ -1,0 +1,147 @@
+{
+  "environment": {
+    "name": "Templately WordPress Multisite Test Environment",
+    "description": "Local development environment for testing Templately WordPress plugin",
+    "baseUrl": "https://templately-multi.test",
+    "testSiteUrl": "https://s3.templately-multi.test",
+    "blogId": 52
+  },
+  "authentication": {
+    "loginUrl": "https://templately-multi.test/wp-login.php",
+    "credentials": {
+      "username": "admin",
+      "password": "admin"
+    },
+    "selectors": {
+      "usernameField": "input[name=\"log\"]",
+      "passwordField": "input[name=\"pwd\"]",
+      "loginButton": "input[name=\"wp-submit\"]",
+      "rememberMe": "input[name=\"rememberme\"]"
+    }
+  },
+  "templately": {
+    "pages": {
+      "dashboard": {
+        "url": "https://s3.templately-multi.test/wp-admin/admin.php?page=templately&path=elementor%2Fpacks",
+        "title": "Templately Dashboard",
+        "description": "Main plugin dashboard with Elementor packs",
+        "expectedElements": [
+          "templately",
+          "elementor",
+          "packs",
+          "template"
+        ]
+      },
+      "library": {
+        "url": "https://s3.templately-multi.test/wp-admin/edit.php?post_type=templately_library",
+        "title": "Template Library Management",
+        "description": "Interface for managing template library",
+        "expectedElements": [
+          "templately_library",
+          "post_type",
+          "Add New",
+          "library"
+        ]
+      },
+      "settings": {
+        "url": "https://s3.templately-multi.test/wp-admin/admin.php?page=templately_settings&path=settings%2Felementor%2Fgeneral",
+        "title": "Templately Settings",
+        "description": "Plugin settings for Elementor general configuration",
+        "expectedElements": [
+          "templately_settings",
+          "elementor",
+          "general",
+          "settings"
+        ]
+      }
+    }
+  },
+  "wordpress": {
+    "adminIndicators": [
+      "wp-admin-bar",
+      "adminmenu",
+      "dashboard",
+      "Welcome to WordPress"
+    ],
+    "loginErrorIndicators": [
+      "login_error",
+      "wp-login-error",
+      "incorrect username or password"
+    ]
+  },
+  "testing": {
+    "timeouts": {
+      "pageLoad": 10000,
+      "elementWait": 5000,
+      "networkRequest": 30000
+    },
+    "retries": {
+      "maxAttempts": 3,
+      "delayBetweenAttempts": 2000
+    },
+    "screenshots": {
+      "enabled": true,
+      "directory": "test-screenshots",
+      "format": "png",
+      "fullPage": false
+    },
+    "snapshots": {
+      "enabled": true,
+      "includeInReport": true
+    }
+  },
+  "validation": {
+    "loginSuccess": {
+      "urlContains": "wp-admin",
+      "titleContains": ["Dashboard", "WordPress"],
+      "elementsPresent": ["#wpadminbar", "#adminmenu"],
+      "elementsAbsent": ["#login", ".login-error"]
+    },
+    "templatelyDashboard": {
+      "urlContains": "page=templately",
+      "elementsPresent": [".templately", "[data-testid*='templately']"],
+      "noErrorMessages": true
+    },
+    "templatelyLibrary": {
+      "urlContains": "post_type=templately_library",
+      "elementsPresent": [".wp-list-table", ".page-title-action"],
+      "titleContains": "Library"
+    },
+    "templatelySettings": {
+      "urlContains": "page=templately_settings",
+      "elementsPresent": ["form", ".submit"],
+      "titleContains": "Settings"
+    }
+  },
+  "errorHandling": {
+    "scenarios": [
+      {
+        "name": "invalidCredentials",
+        "description": "Test with wrong username/password",
+        "credentials": {
+          "username": "wronguser",
+          "password": "wrongpass"
+        },
+        "expectedBehavior": "Should remain on login page with error message"
+      },
+      {
+        "name": "networkTimeout",
+        "description": "Handle slow network responses",
+        "timeout": 60000,
+        "expectedBehavior": "Should retry or fail gracefully"
+      },
+      {
+        "name": "pluginNotActive",
+        "description": "Access Templately pages when plugin is deactivated",
+        "expectedBehavior": "Should show plugin not found or 404 error"
+      }
+    ]
+  },
+  "reporting": {
+    "enabled": true,
+    "formats": ["console", "json"],
+    "includeScreenshots": true,
+    "includeSnapshots": true,
+    "outputDirectory": "test-results"
+  }
+}
