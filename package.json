@@ -4,19 +4,19 @@
   "description": "Comprehensive Playwright MCP test suite for Templately FSI and AI FSI workflows",
   "main": "playwright.config.js",
   "scripts": {
-    "test": "playwright test",
-    "test:setup": "playwright test setup.test.js",
-    "test:fsi": "playwright test fsi-workflow.test.js",
-    "test:ai-fsi": "playwright test ai-fsi-workflow.test.js",
-    "test:teardown": "playwright test teardown.test.js",
-    "test:headed": "playwright test --headed",
-    "test:ui": "playwright test --ui",
-    "test:debug": "playwright test --debug",
-    "test:chrome": "playwright test --project=fsi-chrome",
-    "test:firefox": "playwright test --project=fsi-firefox",
-    "report": "playwright show-report",
-    "install:browsers": "playwright install",
-    "install:deps": "playwright install-deps"
+    "test": "pnpm exec playwright test",
+    "test:setup": "pnpm exec playwright test setup.test.js",
+    "test:fsi": "pnpm exec playwright test fsi-workflow.test.js",
+    "test:ai-fsi": "pnpm exec playwright test ai-fsi-workflow.test.js",
+    "test:teardown": "pnpm exec playwright test teardown.test.js",
+    "test:headed": "pnpm exec playwright test --headed",
+    "test:ui": "pnpm exec playwright test --ui",
+    "test:debug": "pnpm exec playwright test --debug",
+    "test:chrome": "pnpm exec playwright test --project=fsi-chrome",
+    "test:firefox": "pnpm exec playwright test --project=fsi-firefox",
+    "report": "pnpm exec playwright show-report",
+    "install:browsers": "pnpm exec playwright install",
+    "install:deps": "pnpm exec playwright install-deps"
   },
   "keywords": [
     "templately",
@@ -31,18 +31,17 @@
   "author": "Templately Team",
   "license": "MIT",
   "devDependencies": {
-    "@playwright/test": "^1.40.0"
+    "@playwright/test": "^1.55.0"
   },
   "engines": {
     "node": ">=16.0.0"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/templately/templately.git",
-    "directory": "tests"
+    "url": "https://github.com/templately/templately-playwright-tests.git"
   },
   "bugs": {
-    "url": "https://github.com/templately/templately/issues"
+    "url": "https://github.com/templately/templately-playwright-tests/issues"
   },
   "homepage": "https://templately.com"
 }
